@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Inna Halych</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F4EF;
+    --ink: #18160F;
+    --accent: #1E4D8C;
+    --accent2: #B03A10;
+    --green: #1A6B42;
+    --muted: #6B6558;
+    --line: #DDD8CF;
+    --white: #FFFFFF;
+    --sidebar: #3D1E0F;
+    --sidebar-text: #F0EDE6;
+    --sidebar-muted: #8A8478;
+    --tag-bg: rgba(255,255,255,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { font-size: 14px; }
+
+  body {
+    font-family: 'Syne', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 940px;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    box-shadow: 0 8px 60px rgba(0,0,0,0.12), 0 2px 12px rgba(0,0,0,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+    animation: revealPage 0.7s ease forwards;
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  @keyframes revealPage {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--sidebar);
+    color: var(--sidebar-text);
+    padding: 48px 28px 48px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .name-block { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 28px; }
+
+  .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .name em {
+    font-style: italic;
+    color: #7EB3FF;
+    display: block;
+  }
+
+  .title-line {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sidebar-muted);
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+
+  .availability {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: rgba(30,77,140,0.35);
+    color: #7EB3FF;
+    border-radius: 3px;
+  }
+
+  .s-section { display: flex; flex-direction: column; gap: 10px; }
+
+  .s-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sidebar-muted);
+    margin-bottom: 4px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12.5px;
+    color: #D4D0C8;
+    line-height: 1.45;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .contact-item .ico {
+    font-size: 11px;
+    color: var(--sidebar-muted);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .contact-item a { color: #7EB3FF; text-decoration: none; }
+
+  .skill-group { margin-bottom: 14px; }
+
+  .skill-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sidebar-muted);
+    margin-bottom: 7px;
+  }
+
+  .skill-tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 3px;
+    padding: 3px 8px;
+    font-size: 11px;
+    color: #D4D0C8;
+    margin: 2px 2px 2px 0;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 12.5px;
+    color: #D4D0C8;
+  }
+
+  .lang-level {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    color: var(--sidebar-muted);
+  }
+
+  .cert-item {
+    font-size: 11.5px;
+    color: #C4C0B8;
+    line-height: 1.5;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .cert-item span {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-size: 9.5px;
+    color: var(--sidebar-muted);
+    margin-top: 2px;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    padding: 40px 36px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Profile banner */
+  .profile-banner {
+    background: linear-gradient(135deg, #EEF3FB 0%, #F7F4EF 100%);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #2A2720;
+  }
+
+  /* Section */
+  .section { margin-bottom: 22px; }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .section-line { flex: 1; height: 1px; background: var(--line); }
+
+  /* Experience block */
+  .exp-block { margin-bottom: 22px; }
+
+  .exp-block:last-child { margin-bottom: 0; }
+
+  .exp-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: baseline;
+    margin-bottom: 3px;
+  }
+
+  .exp-role {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+
+  .exp-date {
+    font-family: 'DM Sans', sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-size: 10px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .exp-org {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .exp-loc {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .exp-bullets { list-style: none; padding: 0; }
+
+  .exp-bullets li {
+    font-size: 12.5px;
+    line-height: 1.6;
+    padding: 3px 0 3px 16px;
+    position: relative;
+    color: #2A2720;
+  }
+
+  .exp-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--line);
+  }
+
+  .exp-bullets li em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Project / case blocks */
+  .project-block {
+    background: #F9F7F3;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 13px 16px;
+    margin-bottom: 10px;
+  }
+
+  .project-block:last-child { margin-bottom: 0; }
+
+  .project-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .project-title {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--ink);
+  }
+
+  .project-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .badge-mob { background: #E8F0FA; color: var(--accent); }
+  .badge-sub { background: #FEF0E8; color: var(--accent2); }
+  .badge-thesis { background: #E8F5EE; color: var(--green); }
+  .badge-pm { background: #F5E8FA; color: #6A2D8A; }
+
+  .project-bullets { list-style: none; padding: 0; }
+
+  .project-bullets li {
+    font-size: 12px;
+    line-height: 1.6;
+    padding: 2px 0 2px 14px;
+    position: relative;
+    color: #3A3630;
+  }
+
+  .project-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-size: 10px;
+    top: 4px;
+  }
+
+  .project-dataset {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9.5px;
+    color: var(--muted);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+
+  /* Education */
+  .edu-block { margin-bottom: 14px; }
+
+  .edu-block:last-child { margin-bottom: 0; }
+
+  .edu-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .edu-degree {
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .edu-date {
+    font-family: 'DM Sans', sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .edu-school {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .edu-note {
+    font-size: 11.5px;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .profile-banner .psych-note {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .divider-mini {
+    height: 1px;
+    background: var(--line);
+    margin: 20px 0;
+  }
+
+  @media print {
+    body { padding: 0; background: white; }
+    .page { box-shadow: none; max-width: 100%; border-radius: 0; }
+  }
+
+  @media (max-width: 720px) {
+    .page { grid-template-columns: 1fr; }
+    .sidebar { padding: 36px 24px; }
+    .main { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════════ SIDEBAR ═══════════════ -->
+  <aside class="sidebar">
+
+    <div class="name-block">
+      <div class="name">Inna<em>Halych</em></div>
+      <div class="title-line">Business Analyst<br>orientée Produit Digital</div>
+      <div class="availability">Disponible immédiatement</div>
+    </div>
+
+    <!-- Contact -->
+    <div class="s-section">
+      <div class="s-label">Contact</div>
+      <div class="contact-item">
+        <span class="ico">✆</span>
+        +33 6 74 84 12 58
+      </div>
+      <div class="contact-item">
+        <span class="ico">✉</span>
+        <a href="/cdn-cgi/l/email-protection#b1d9d0ddc8d2d9eed8dfdfd0f1c1c3dec5dedfdcd0d8dd9fd2dedc"><span class="__cf_email__" data-cfemail="9ff7fef3e6fcf7c0f6f1f1fedfefedf0ebf0f1f2fef6f3b1fcf0f2">[email&#160;protected]</span></a>
+      </div>
+      <div class="contact-item">
+        <span class="ico">in</span>
+        <a href="https://www.linkedin.com/in/inna-halych17738/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="contact-item">
+        <span class="ico">◎</span>
+        Île-de-France &amp; Grand Est
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="s-section">
+      <div class="s-label">Compétences</div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Analytics &amp; Data</div>
+        <span class="skill-tag">Power BI (DAX)</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">GA 4</span>
+        <span class="skill-tag">Amplitude</span>
+        <span class="skill-tag">Mixpanel</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Excel (VBA)</span>
+        <span class="skill-tag">SAP Reporting</span>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Produit &amp; Agile</div>
+        <span class="skill-tag">Jira</span>
+        <span class="skill-tag">Confluence</span>
+        <span class="skill-tag">Notion</span>
+        <span class="skill-tag">Miro</span>
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">HubSpot</span>
+        <span class="skill-tag">Salesforce</span>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Méthodes BA</div>
+        <span class="skill-tag">User Stories</span>
+        <span class="skill-tag">UAT</span>
+        <span class="skill-tag">BRD</span>
+        <span class="skill-tag">Backlog</span>
+        <span class="skill-tag">A/B Testing</span>
+        <span class="skill-tag">Gap Analysis</span>
+        <span class="skill-tag">Roadmap</span>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="s-section">
+      <div class="s-label">Langues</div>
+      <div class="lang-item">Français <span class="lang-level">C1</span></div>
+      <div class="lang-item">Anglais <span class="lang-level">C1</span></div>
+      <div class="lang-item">Ukrainien <span class="lang-level">Natif</span></div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="s-section">
+      <div class="s-label">Certifications</div>
+      <div class="cert-item">
+        SAP - Business Analyst Cert. Prof.
+        <span>mars 2026</span>
+      </div>
+      <div class="cert-item">
+        IBM - Product Management
+        <span>fév. 2026</span>
+      </div>
+      <div class="cert-item">
+        Agile with Atlassian Jira
+        <span>juin 2025</span>
+      </div>
+      <div class="cert-item">
+        Udemy - Power BI &amp; Data Analyst
+        <span>jan. 2025</span>
+      </div>
+      <div class="cert-item">
+        Amplitude / Mixpanel Analytics
+        <span>oct. 2024</span>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ═══════════════ MAIN ═══════════════ -->
+  <main class="main">
+
+    <!-- Profile -->
+    <div class="profile-banner">
+      Business Analyst orientée produits digitaux - avec une expérience concrète en analyse des besoins métier, structuration de KPIs, tests fonctionnels (UAT) et collaboration cross-fonctionnelle entre équipes métier et techniques.<span class="psych-note">Titulaire d'une licence en psychologie, j'apporte une double lecture - data-driven et comportementale - pour comprendre ce que les utilisateurs ressentent, pas seulement ce que les chiffres montrent.</span>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-title">Expérience</div>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="exp-block">
+        <div class="exp-top">
+          <div class="exp-role">Project Manager - Stage</div>
+          <div class="exp-date">avr. - sept. 2025</div>
+        </div>
+        <div class="exp-org">CFL - Chemins de Fer Luxembourgeois</div>
+        <div class="exp-loc">Luxembourg, Luxembourg</div>
+        <ul class="exp-bullets">
+          <li>Recueilli les besoins métier via ateliers et analyse documentaire - rédigé les spécifications fonctionnelles et structuré <em>15+ KPIs</em> opérationnels ; documentation des procédures dans ConSense - réduction de <em>40%</em> du temps de reporting, audit interne réussi.</li>
+          <li>Interface principale entre parties prenantes métier et équipe IT sur le POC <em>BikeBox</em> - animation d'ateliers, rédaction de cas de test, exécution des tests UAT web &amp; mobile, suivi des anomalies via Jira.</li>
+          <li>Conçu des dashboards <em>Power BI</em> et reportings SAP pour analyser les comportements usagers - tableaux de bord adoptés par l'équipe digitale comme outils de pilotage.</li>
+        </ul>
+      </div>
+
+      <div class="divider-mini"></div>
+
+      <div class="exp-block">
+        <div class="exp-top">
+          <div class="exp-role">Chef de Projet Digital</div>
+          <div class="exp-date">mars 2021 - juil. 2022</div>
+        </div>
+        <div class="exp-org">Labgrammedia - Agence Digital</div>
+        <div class="exp-loc">Hybride, Ukraine</div>
+        <ul class="exp-bullets">
+          <li>Traduit les besoins de <em>20+ clients B2C</em> (Europe, Asie, USA) en briefs opérationnels pour les équipes design et technique - interface principale entre parties prenantes et équipes de livraison.</li>
+          <li>Analysé le parcours client end-to-end pour identifier les blocages de conversion hors-média (UX, cohérence de marque, service client) - recommandations actionnables intégrées par les équipes.</li>
+          <li>Analysé les données CRM (HubSpot, Salesforce) pour identifier les points de friction sur l'activation et la rétention - restructuré les workflows de segmentation pour améliorer les KPIs d'engagement.</li>
+        </ul>
+      </div>
+
+
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-title">Projets &amp; Portfolio</div>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Thesis -->
+      <div class="project-block">
+        <div class="project-top">
+          <div class="project-title">Mémoire de Recherche - Mobility Analytics (CFL Luxembourg)</div>
+          <div class="project-badge badge-thesis">Recherche Appliquée</div>
+        </div>
+        <ul class="project-bullets">
+          <li>Analysé ~2 ans de données réelles d'occupation des parkings P+R CFL - identifié <em>5 patterns comportementaux</em> (jours fériés, vacances, profils de pic, saisonnalité) et introduit un indicateur original de <em>«turbulence opérationnelle»</em>.</li>
+          <li>Dashboards Power BI adoptés par l'équipe opérationnelle - recommandations validées par le management, applicable à la tarification dynamique et planification RH.</li>
+        </ul>
+        <div class="project-dataset">IAE Metz · Tuteur : M. Pascal Damel · Mention Bien · 2025</div>
+      </div>
+
+      <!-- Case 1 -->
+      <div class="project-block">
+        <div class="project-top">
+          <div class="project-title">Product Analytics Case - Urban Micromobility Demand Optimization</div>
+          <div class="project-badge badge-mob">Mobility · Portfolio</div>
+        </div>
+        <ul class="project-bullets">
+          <li>Analysé 2M+ trajets e-scooters réels pour identifier clusters de demande et inefficiences tarifaires par zone et heure de pointe - 2 hypothèses produit formulées.</li>
+          <li>Conçu framework A/B test sur dynamic surge pricing ; recommandé micro-trip pricing tier et rééquilibrage proactif de flotte - uplift estimé <em>+12-18%</em> revenu en heures de pointe.</li>
+        </ul>
+        <div class="project-dataset">Dataset : Austin Shared Micromobility Trips - data.austintexas.gov (~2M trips, open data)</div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="project-block">
+        <div class="project-top">
+          <div class="project-title">Product Analytics Case - Subscription Churn &amp; Retention Optimization</div>
+          <div class="project-badge badge-sub">Subscription · Portfolio</div>
+        </div>
+        <ul class="project-bullets">
+          <li>Analysé 2M+ profils utilisateurs (KKBox streaming) pour identifier signaux comportementaux précoces de churn à J1-J7 ; hypothèse liant faible engagement D7 au churn J30.</li>
+          <li>Conçu expérience re-engagement ciblée et framework risque churn précoce - recommandation onboarding auto-renouvellement applicable à la roadmap produit.</li>
+        </ul>
+        <div class="project-dataset">Dataset : KKBox Music Streaming Churn - Kaggle WSDM 2018 (~2M users, open data)</div>
+      </div>
+
+      <!-- Funnel case -->
+      <div class="project-block">
+        <div class="project-top">
+          <div class="project-title">Analyse de Funnel &amp; Priorisation Backlog - Cas Pratique</div>
+          <div class="project-badge badge-pm">Product · Agile</div>
+        </div>
+        <ul class="project-bullets">
+          <li>Cartographié 3 friction points dans le funnel d'activation d'une app B2C mobilité - rédigé user stories + critères d'acceptation + événements Amplitude à tracker ; scoring model pour <em>15 feature requests</em> - grille de priorisation roadmap livrée.</li>
+          <li>SQL data analysis de datasets structurés (JOIN, GROUP BY, agrégations) pour identifier des patterns comportementaux et formuler des recommandations produit.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-title">Formation</div>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="edu-block">
+        <div class="edu-top">
+          <div class="edu-degree">Master - Management et Business Administration</div>
+          <div class="edu-date">2024 - 2025</div>
+        </div>
+        <div class="edu-school">IAE Metz School of Management - Université de Lorraine</div>
+        <div class="edu-note">Mention : Bien</div>
+      </div>
+
+      <div class="divider-mini"></div>
+
+      <div class="edu-block">
+        <div class="edu-top">
+          <div class="edu-degree">Licence - Gestion Innovation</div>
+          <div class="edu-date">2023 - 2024</div>
+        </div>
+        <div class="edu-school">IAE Metz School of Management - Université de Lorraine</div>
+      </div>
+
+      <div class="divider-mini"></div>
+
+      <div class="edu-block">
+        <div class="edu-top">
+          <div class="edu-degree">Licence - Psychologie</div>
+   
